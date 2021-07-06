@@ -1,0 +1,11 @@
+﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\Unreal\TLOU\TLOU_Clone).
+  Building TLOU_CloneEditor...
+  Using Visual Studio 2019 14.25.28614 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Building 3 actions with 12 processes...
+    [1/3] UE4Editor-TLOU_Clone-0003.lib
+       D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-0003.lib ���̺귯�� �� D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-0003.exp ��ü�� �����ϰ� �ֽ��ϴ�.
+    [2/3] UE4Editor-TLOU_Clone-0003.dll
+       D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-0003.suppressed.lib ���̺귯�� �� D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-0003.suppressed.exp ��ü�� �����ϰ� �ֽ��ϴ�.
+    [3/3] TLOU_CloneEditor.target
+  Total time in Parallel executor: 1.23 seconds
+  Total execution time: 2.34 seconds

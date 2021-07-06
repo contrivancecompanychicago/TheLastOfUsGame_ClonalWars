@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\Unreal\\TLOU\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_Clone\\TLOU_Clone.Build.cs",
+		"D:\\Unreal\\TLOU\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_Clone.Target.cs",
+		"D:\\Unreal\\TLOU\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_CloneEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}
