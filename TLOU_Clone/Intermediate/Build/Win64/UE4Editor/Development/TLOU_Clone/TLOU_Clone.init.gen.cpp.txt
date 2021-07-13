@@ -1,3 +1,3 @@
-D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\Definitions.TLOU_Clone.h
-C:\Program Files (x86)\Game\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files (x86)\Game\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\Definitions.TLOU_Clone.h
+C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h

@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "TLOU_Clone",
-			"Path": "D:\\Unreal\\TLOU\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_Clone.Target.cs",
+			"Path": "C:\\Users\\cjk18\\Documents\\Unreal Projects\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_Clone.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "TLOU_CloneEditor",
-			"Path": "D:\\Unreal\\TLOU\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_CloneEditor.Target.cs",
+			"Path": "C:\\Users\\cjk18\\Documents\\Unreal Projects\\TLOU_Clone\\TLOU_Clone\\Source\\TLOU_CloneEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

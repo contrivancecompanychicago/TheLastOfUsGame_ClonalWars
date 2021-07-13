@@ -1,0 +1,20 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-TLOU_Clone-3531.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\ModularAIController.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\MyCharacter.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\DefaultEnemy.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\TLOU_Clone.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\DefaultEnemy.gen.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\ModularAIController.gen.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\MyCharacter.gen.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\TLOU_Clone.init.gen.cpp.obj"
+"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\Default.rc2.res"
+/OUT:"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-3531.lib"
+/INCLUDE:IMPLEMENT_MODULE_TLOU_Clone

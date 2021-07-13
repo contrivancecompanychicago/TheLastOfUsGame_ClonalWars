@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TLOU_Clone.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{AD0D9D66-CF82-4D37-9B21-1119106BB5FF}</UniqueIdentifier>
+      <UniqueIdentifier>{C6E8BF32-1329-4B2B-ADA0-B97CCDFA4790}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TLOU_Clone.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\Zombie_v27_Starter.png" />
     <Filter Include="Config">
-      <UniqueIdentifier>{C0044C76-A2B3-48A6-BCEE-CFFA37CA49FB}</UniqueIdentifier>
+      <UniqueIdentifier>{C37D2898-9B52-402F-94E1-E0B4151E1BD1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,7 +31,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TLOU_Clone">
-      <UniqueIdentifier>{8DD8CFD2-4FD8-43BD-940F-13BEEFC24306}</UniqueIdentifier>
+      <UniqueIdentifier>{5B0690FA-0A00-4329-B342-C04AA608CC2B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\TLOU_Clone\DefaultEnemy.cpp">
       <Filter>Source\TLOU_Clone</Filter>
@@ -49,15 +49,21 @@
       <Filter>Source\TLOU_Clone</Filter>
     </ClInclude>
     <Filter Include="Source\TLOU_Clone\Private">
-      <UniqueIdentifier>{CBCB83D4-4613-4502-9217-5C5CD2C8CF14}</UniqueIdentifier>
+      <UniqueIdentifier>{D76C3649-B16B-4C3E-BF4F-275E4726B941}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\TLOU_Clone\Private\ModularAIController.cpp">
       <Filter>Source\TLOU_Clone\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\TLOU_Clone\Private\MyCharacter.cpp">
+      <Filter>Source\TLOU_Clone\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\TLOU_Clone\Public">
-      <UniqueIdentifier>{873077A3-4610-433F-8D87-3F6BA4D52F0B}</UniqueIdentifier>
+      <UniqueIdentifier>{71224767-5E82-4882-AC95-7DF574B4E457}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\TLOU_Clone\Public\ModularAIController.h">
+      <Filter>Source\TLOU_Clone\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TLOU_Clone\Public\MyCharacter.h">
       <Filter>Source\TLOU_Clone\Public</Filter>
     </ClInclude>
   </ItemGroup>
