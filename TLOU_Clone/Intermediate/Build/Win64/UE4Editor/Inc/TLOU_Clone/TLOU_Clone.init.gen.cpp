@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeTLOU_Clone_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x920015BA,
-				0x97F4C382,
+				0x2B9F351B,
+				0x6A0EECBB,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
