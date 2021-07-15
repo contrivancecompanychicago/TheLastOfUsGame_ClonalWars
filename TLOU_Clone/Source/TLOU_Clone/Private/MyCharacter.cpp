@@ -2,6 +2,10 @@
 
 
 #include "MyCharacter.h"
+#include "Runtime/Engine/Classes/Engine/World.h"
+#include "Components/SkeletalMeshComponent.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include "GameFramework/PlayerController.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -15,7 +19,16 @@ AMyCharacter::AMyCharacter()
 void AMyCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	UMaterialInstanceDynamic* const material_instance = UMaterialInstanceDynamic::Create(GetMesh()->GetMaterial(0), this);
+
+	if (material_instance)
+	{
+		material_instance->SetVectorParameterValue("BodyColor", FLinearColor(1.0f, 0.0f, 0.0f, 1.0f));
+		GetMesh()->SetMaterial(0, material_instance);
+	}
 	
+
 }
 
 // Called every frame

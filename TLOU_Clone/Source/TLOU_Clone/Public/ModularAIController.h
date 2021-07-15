@@ -18,15 +18,9 @@ class TLOU_CLONE_API AModularAIController : public AAIController
 	GENERATED_BODY()
 
 public:
-	AModularAIController();
 
-	virtual void BeginPlay() override;
-	virtual void OnPossess(APawn* aPawn) override;
-	virtual void Tick(float DeltaSeconds) override;
-	virtual FRotator GetControlRotation() const override;
-
-	UFUNCTION()
-		void OnPawnDetected(const TArray<AActor*>& DetectedPawns);
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
+		class UAISenseConfig_Sight* SightConfig;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
 		float AISightRadius = 500.f;
@@ -41,9 +35,6 @@ public:
 		float AIFieldOfView = 90.f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
-		class UAISenseConfig_Sight* SightConfig;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
 		bool bIsPlayerDetected;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
@@ -51,24 +42,53 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
 		float DistanceToPlayer = 0.0f;
-private:
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
+		class UAISenseConfig_Hearing* HearingConfig;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
+		float AIHearingRange = 1000.f;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
+		float AIHearingAge = 5.f;
+
 	UPROPERTY(VisibleAnywhere, Category = "AI")
-	float riskLevel = 0.f;
+		float riskLevel = 0.f;
+public:
+	UFUNCTION(BlueprintCallable, Category = "AIPerception")
+		void OnTargetDetected(const TArray<AActor*>& DetectedPawns);
+
+	UFUNCTION()
+		void OnPawnHearing(const TArray<AActor*>& DetectedPawns);
+
+	AModularAIController(FObjectInitializer const& object_initializer = FObjectInitializer::Get());
+
+	virtual void BeginPlay() override;
+	virtual void OnPossess(APawn* aPawn) override;
+	virtual void Tick(float DeltaSeconds) override;
+	virtual FRotator GetControlRotation() const override;
+	class UBlackboardComponent* get_blackboard() const;
+
+private:
 
 	UPROPERTY(VisibleAnywhere, Category = "AI")
 	float MaxRiskLevel = 100.f;
 
 	float plus = 20.0f;
-
 	int secflags = 0;
-	void AdvanceTimer();
-
 	FTimerHandle MoveAIHandle;
 
-	UPROPERTY(transient)
+private:
+	void RiskLevelTimer();
+
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
+		UBehaviorTreeComponent* btreeComp;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
+		UBehaviorTree* btree;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
 		UBlackboardComponent* BlackboardComp;
-
-	UPROPERTY(transient)
-		UBehaviorTreeComponent* BehaviorComp;
-
 };

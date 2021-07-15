@@ -17,12 +17,14 @@ class AActor;
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_SPARSE_DATA
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execOnPawnDetected);
+	DECLARE_FUNCTION(execOnPawnHearing); \
+	DECLARE_FUNCTION(execOnTargetDetected);
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execOnPawnDetected);
+	DECLARE_FUNCTION(execOnPawnHearing); \
+	DECLARE_FUNCTION(execOnTargetDetected);
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_INCLASS_NO_PURE_DECLS \
@@ -49,7 +51,7 @@ public: \
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AModularAIController(const FObjectInitializer& ObjectInitializer); \
+	NO_API AModularAIController(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AModularAIController) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AModularAIController); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AModularAIController); \
@@ -68,14 +70,14 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AModularAIController); \
 DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AModularAIController); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AModularAIController)
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AModularAIController)
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__riskLevel() { return STRUCT_OFFSET(AModularAIController, riskLevel); } \
 	FORCEINLINE static uint32 __PPO__MaxRiskLevel() { return STRUCT_OFFSET(AModularAIController, MaxRiskLevel); } \
-	FORCEINLINE static uint32 __PPO__BlackboardComp() { return STRUCT_OFFSET(AModularAIController, BlackboardComp); } \
-	FORCEINLINE static uint32 __PPO__BehaviorComp() { return STRUCT_OFFSET(AModularAIController, BehaviorComp); }
+	FORCEINLINE static uint32 __PPO__btreeComp() { return STRUCT_OFFSET(AModularAIController, btreeComp); } \
+	FORCEINLINE static uint32 __PPO__btree() { return STRUCT_OFFSET(AModularAIController, btree); } \
+	FORCEINLINE static uint32 __PPO__BlackboardComp() { return STRUCT_OFFSET(AModularAIController, BlackboardComp); }
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_15_PROLOG
