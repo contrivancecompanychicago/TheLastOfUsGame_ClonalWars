@@ -53,7 +53,7 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
 		float AIHearingAge = 5.f;
 
-	UPROPERTY(VisibleAnywhere, Category = "AI")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI")
 		float riskLevel = 0.f;
 public:
 	UFUNCTION(BlueprintCallable, Category = "AIPerception")

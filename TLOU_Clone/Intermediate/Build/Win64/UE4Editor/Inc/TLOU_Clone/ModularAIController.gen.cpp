@@ -319,7 +319,7 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel = { "riskLevel", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, riskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel = { "riskLevel", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, riskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData[] = {
 		{ "Category", "AI" },
@@ -398,7 +398,7 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AModularAIController, 1795388693);
+	IMPLEMENT_CLASS(AModularAIController, 3605795357);
 	template<> TLOU_CLONE_API UClass* StaticClass<AModularAIController>()
 	{
 		return AModularAIController::StaticClass();

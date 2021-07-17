@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeTLOU_Clone_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x790F2A5F,
+				0xCD4D5E5B,
 				0x4F399C7A,
 				METADATA_PARAMS(nullptr, 0)
 			};

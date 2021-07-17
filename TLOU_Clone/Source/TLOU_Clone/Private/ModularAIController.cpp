@@ -91,6 +91,7 @@ FRotator AModularAIController::GetControlRotation() const
 	{
 		return FRotator(0.f, 0.f, 0.f);
 	}
+
 	return FRotator(0.f, GetPawn()->GetActorRotation().Yaw, 0.0f);
 }
 

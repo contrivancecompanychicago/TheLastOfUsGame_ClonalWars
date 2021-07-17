@@ -234,6 +234,10 @@
 /I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Inc\TLOU_Clone
 /I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Source
 /I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Public
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
+/I Runtime\AugmentedReality\Public
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\MRMesh
+/I Runtime\MRMesh\Public
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
