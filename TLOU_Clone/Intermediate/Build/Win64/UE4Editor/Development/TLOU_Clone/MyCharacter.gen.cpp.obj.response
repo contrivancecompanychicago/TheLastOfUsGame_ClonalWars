@@ -31,7 +31,7 @@
 /wd4244
 /wd4838
 /I .
-/I D:\Unreal\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Private
+/I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Private
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
 /I Runtime\Engine\Classes
@@ -231,9 +231,9 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Inc\TLOU_Clone
-/I D:\Unreal\TLOU_Clone\TLOU_Clone\Source
-/I D:\Unreal\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Public
+/I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Inc\TLOU_Clone
+/I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Source
+/I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\MRMesh
@@ -261,18 +261,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Inc\TLOU_Clone\MyCharacter.gen.cpp"
-/FI"D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\Definitions.TLOU_Clone.h"
-/Fo"D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\MyCharacter.gen.cpp.obj"
+/FI"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Inc\TLOU_Clone\MyCharacter.gen.cpp"
+/FI"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\Definitions.TLOU_Clone.h"
+/Fo"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\MyCharacter.gen.cpp.obj"
 /TP
 /GR-
 /W4
