@@ -12,6 +12,12 @@
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 #include "Runtime/Engine/Classes/Kismet/GameplayStatics.h"
 #include "GameFramework/Character.h"
+#include "blackboard_keys.h"
+#include "ModularAIEnemy.h"
+
+#include "Components/SkeletalMeshComponent.h"
+#include "Materials/MaterialInstanceDynamic.h"
+#include <Runtime/AIModule/Classes/Actions/PawnActionsComponent.h>
 
 AModularAIController::AModularAIController(FObjectInitializer const& object_initializer)
 {
@@ -24,40 +30,17 @@ AModularAIController::AModularAIController(FObjectInitializer const& object_init
 	btreeComp = object_initializer.CreateDefaultSubobject<UBehaviorTreeComponent>(this, TEXT("BehaviorComp"));
 	BlackboardComp = object_initializer.CreateDefaultSubobject<UBlackboardComponent>(this, TEXT("BlackboardComp"));
 
+	SetPerceptionSystem();
+
 	PrimaryActorTick.bCanEverTick = true;
-
-	SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("Sight Config"));
-	SetPerceptionComponent(*CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("Perception Component")));
-
-	SightConfig->SightRadius = AISightRadius;
-	SightConfig->LoseSightRadius = AILoseSightRadius;
-	SightConfig->PeripheralVisionAngleDegrees = AIFieldOfView;
-	SightConfig->SetMaxAge(AISightAge);
-	SightConfig->DetectionByAffiliation.bDetectEnemies = true;
-	SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
-	SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
-
-	GetPerceptionComponent()->SetDominantSense(*SightConfig->GetSenseImplementation());
-	GetPerceptionComponent()->OnPerceptionUpdated.AddDynamic(this, &AModularAIController::OnTargetDetected);
-	GetPerceptionComponent()->ConfigureSense(*SightConfig);
-
-	//HearingConfig = CreateDefaultSubobject<UAISenseConfig_Hearing>(TEXT("Hearing Config"));
-	//HearingConfig->HearingRange = AIHearingRange;
-	//HearingConfig->DetectionByAffiliation.bDetectEnemies = true;
-	//HearingConfig->DetectionByAffiliation.bDetectFriendlies = true;
-	//HearingConfig->DetectionByAffiliation.bDetectNeutrals = true;
-	//HearingConfig->SetMaxAge(AIHearingAge);
-
-	//GetPerceptionComponent()->SetDominantSense(*HearingConfig->GetSenseImplementation());
-	//GetPerceptionComponent()->OnPerceptionUpdated.AddDynamic(this, &AModularAIController::OnPawnHearing);
-	//GetPerceptionComponent()->ConfigureSense(*HearingConfig);
-
-
 	bIsPlayerDetected = false;
 }
 void AModularAIController::BeginPlay()
 {
 	Super::BeginPlay();
+	material_instance = UMaterialInstanceDynamic::Create(this->GetCharacter()->GetMesh()->GetMaterial(0), this);
+
+
 	RunBehaviorTree(btree);
 	btreeComp->StartTree(*btree);
 
@@ -108,19 +91,34 @@ void AModularAIController::OnTargetDetected(const TArray<AActor*>& DetectedPawns
 	}
 	plus = 20.0f;
 	bIsPlayerDetected = true;
+
+	get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
+	Cast<AModularAIEnemy>(GetCharacter())->SetIsChase(true);
 }
 
-void AModularAIController::OnPawnHearing(const TArray<AActor*>& DetectedPawns)
+void AModularAIController::SetPerceptionSystem()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Hearing"));
-	riskLevel += 1.f;
+	SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("Sight Config"));
+	SetPerceptionComponent(*CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("Perception Component")));
+
+	SightConfig->SightRadius = AISightRadius;
+	SightConfig->LoseSightRadius = AILoseSightRadius;
+	SightConfig->PeripheralVisionAngleDegrees = AIFieldOfView;
+	SightConfig->SetMaxAge(AISightAge);
+	SightConfig->DetectionByAffiliation.bDetectEnemies = true;
+	SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
+	SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
+
+	GetPerceptionComponent()->SetDominantSense(*SightConfig->GetSenseImplementation());
+	GetPerceptionComponent()->OnPerceptionUpdated.AddDynamic(this, &AModularAIController::OnTargetDetected);
+	GetPerceptionComponent()->ConfigureSense(*SightConfig);
+
 }
 
 void AModularAIController::RiskLevelTimer()
 {
 	if (bIsPlayerDetected)
 	{
-		btreeComp->StopTree(EBTStopMode::Forced);
 		if (DistanceToPlayer >= AISightRadius)
 		{
 			if (secflags == 3)
@@ -134,20 +132,31 @@ void AModularAIController::RiskLevelTimer()
 			}
 		}
 
-		UE_LOG(LogTemp, Warning, TEXT("riskLevel = %f"), riskLevel);
 		if (riskLevel >= MaxRiskLevel)
 		{
-			ACharacter* Player = Cast<ACharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-			MoveToActor(Player, 5.0f);
+			ChangeBodyColor(FLinearColor::Red);
 			riskLevel = 0.0f;
 		}
 		riskLevel += plus;
 
 		if (plus < 0.0f && riskLevel <= 0.0f) {
+			get_blackboard()->SetValueAsBool(bb_keys::can_see_player, false);
+			Cast<AModularAIEnemy>(GetCharacter())->SetIsChase(false);
 			bIsPlayerDetected = false;
-			StopMovement();
-			UE_LOG(LogTemp, Warning, TEXT("StopMovement"));
-			btreeComp->StartTree(*btree);
+
+			ChangeBodyColorFlag = false;
+			ChangeBodyColor(FLinearColor::White);
+			ChangeBodyColorFlag = false;
 		}
+	}
+}
+
+void AModularAIController::ChangeBodyColor(FLinearColor Color) 
+{
+	if (!ChangeBodyColorFlag &&  material_instance)
+	{
+		material_instance->SetVectorParameterValue("BodyColor", FLinearColor(Color));
+		this->GetCharacter()->GetMesh()->SetMaterial(0, material_instance);
+		ChangeBodyColorFlag = true;
 	}
 }

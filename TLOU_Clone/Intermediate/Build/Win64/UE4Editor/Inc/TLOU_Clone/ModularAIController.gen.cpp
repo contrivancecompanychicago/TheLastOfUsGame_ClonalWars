@@ -19,19 +19,10 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 	UPackage* Z_Construct_UPackage__Script_TLOU_Clone();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UAISenseConfig_Sight_NoRegister();
-	AIMODULE_API UClass* Z_Construct_UClass_UAISenseConfig_Hearing_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTreeComponent_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBlackboardComponent_NoRegister();
 // End Cross Module References
-	DEFINE_FUNCTION(AModularAIController::execOnPawnHearing)
-	{
-		P_GET_TARRAY_REF(AActor*,Z_Param_Out_DetectedPawns);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->OnPawnHearing(Z_Param_Out_DetectedPawns);
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(AModularAIController::execOnTargetDetected)
 	{
 		P_GET_TARRAY_REF(AActor*,Z_Param_Out_DetectedPawns);
@@ -44,53 +35,9 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 	{
 		UClass* Class = AModularAIController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "OnPawnHearing", &AModularAIController::execOnPawnHearing },
 			{ "OnTargetDetected", &AModularAIController::execOnTargetDetected },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics
-	{
-		struct ModularAIController_eventOnPawnHearing_Parms
-		{
-			TArray<AActor*> DetectedPawns;
-		};
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_DetectedPawns_Inner;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DetectedPawns_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_DetectedPawns;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UE4CodeGen_Private::FFunctionParams FuncParams;
-	};
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns_Inner = { "DetectedPawns", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns_MetaData[] = {
-		{ "NativeConst", "" },
-	};
-#endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns = { "DetectedPawns", nullptr, (EPropertyFlags)0x0010000008000182, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ModularAIController_eventOnPawnHearing_Parms, DetectedPawns), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::NewProp_DetectedPawns,
-	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Public/ModularAIController.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AModularAIController, nullptr, "OnPawnHearing", nullptr, nullptr, sizeof(ModularAIController_eventOnPawnHearing_Parms), Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AModularAIController_OnPawnHearing()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AModularAIController_OnPawnHearing_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AModularAIController_OnTargetDetected_Statics
 	{
@@ -168,11 +115,6 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AIFieldOfView;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsPlayerDetected_MetaData[];
-#endif
-		static void NewProp_bIsPlayerDetected_SetBit(void* Obj);
-		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsPlayerDetected;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DistanceToDetectedPlayer_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanceToDetectedPlayer;
@@ -181,25 +123,13 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanceToPlayer;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HearingConfig_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxRiskLevel_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HearingConfig;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AIHearingRange_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AIHearingRange;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AIHearingAge_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AIHearingAge;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxRiskLevel;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_riskLevel_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_riskLevel;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxRiskLevel_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxRiskLevel;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_btreeComp_MetaData[];
 #endif
@@ -221,7 +151,6 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_TLOU_Clone,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AModularAIController_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AModularAIController_OnPawnHearing, "OnPawnHearing" }, // 2721510104
 		{ &Z_Construct_UFunction_AModularAIController_OnTargetDetected, "OnTargetDetected" }, // 3806253661
 	};
 #if WITH_METADATA
@@ -245,39 +174,28 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightRadius = { "AISightRadius", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AISightRadius), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightRadius_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightRadius = { "AISightRadius", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AISightRadius), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightRadius_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge = { "AISightAge", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AISightAge), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge = { "AISightAge", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AISightAge), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius = { "AILoseSightRadius", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AILoseSightRadius), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius = { "AILoseSightRadius", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AILoseSightRadius), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView = { "AIFieldOfView", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AIFieldOfView), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "Public/ModularAIController.h" },
-	};
-#endif
-	void Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected_SetBit(void* Obj)
-	{
-		((AModularAIController*)Obj)->bIsPlayerDetected = 1;
-	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected = { "bIsPlayerDetected", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AModularAIController), &Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected_SetBit, METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView = { "AIFieldOfView", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AIFieldOfView), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToDetectedPlayer_MetaData[] = {
 		{ "Category", "AI" },
@@ -293,40 +211,19 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer = { "DistanceToPlayer", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, DistanceToPlayer), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_HearingConfig_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_HearingConfig = { "HearingConfig", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, HearingConfig), Z_Construct_UClass_UAISenseConfig_Hearing_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_HearingConfig_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_HearingConfig_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingRange_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "Public/ModularAIController.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingRange = { "AIHearingRange", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AIHearingRange), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingRange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingRange_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingAge_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "Public/ModularAIController.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingAge = { "AIHearingAge", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, AIHearingAge), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingAge_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingAge_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel = { "MaxRiskLevel", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, MaxRiskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel = { "riskLevel", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, riskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "Public/ModularAIController.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel = { "MaxRiskLevel", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, MaxRiskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel = { "riskLevel", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, riskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_btreeComp_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -359,14 +256,10 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_AISightAge,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_AILoseSightRadius,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_bIsPlayerDetected,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToDetectedPlayer,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_HearingConfig,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingRange,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_AIHearingAge,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_btreeComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_btree,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_BlackboardComp,
@@ -398,7 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AModularAIController, 1795388693);
+	IMPLEMENT_CLASS(AModularAIController, 3588106736);
 	template<> TLOU_CLONE_API UClass* StaticClass<AModularAIController>()
 	{
 		return AModularAIController::StaticClass();

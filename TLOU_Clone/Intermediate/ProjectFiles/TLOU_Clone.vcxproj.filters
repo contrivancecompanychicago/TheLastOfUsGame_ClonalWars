@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\TLOU_Clone.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{8B123E7F-5CA4-4680-AF26-657B2B2C614D}</UniqueIdentifier>
+      <UniqueIdentifier>{72C6FA08-1B8D-4DF8-9390-7F5A1920CE80}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\TLOU_Clone.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\Zombie_v27_Starter.png" />
     <Filter Include="Config">
-      <UniqueIdentifier>{3EC3CAC1-55AA-4F71-8224-873437C4B70D}</UniqueIdentifier>
+      <UniqueIdentifier>{1E882F25-6BD3-4180-A3E9-D41DC7D59AB2}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -31,12 +31,9 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\TLOU_Clone">
-      <UniqueIdentifier>{7B2B4EA2-5EC4-41ED-832F-096F1DE31817}</UniqueIdentifier>
+      <UniqueIdentifier>{C34184BF-DF06-4495-BF2F-668B9D5D0B96}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\TLOU_Clone\DefaultEnemy.cpp">
-      <Filter>Source\TLOU_Clone</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\TLOU_Clone\DefaultEnemy.h">
+    <ClInclude Include="..\..\Source\TLOU_Clone\blackboard_keys.h">
       <Filter>Source\TLOU_Clone</Filter>
     </ClInclude>
     <None Include="..\..\Source\TLOU_Clone\TLOU_Clone.Build.cs">
@@ -49,35 +46,36 @@
       <Filter>Source\TLOU_Clone</Filter>
     </ClInclude>
     <Filter Include="Source\TLOU_Clone\Private">
-      <UniqueIdentifier>{367593A9-FEB7-4A0E-BEE6-C9002F88675C}</UniqueIdentifier>
+      <UniqueIdentifier>{49F6B11E-1A83-45D1-B57F-5C2D6398BD6C}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\TLOU_Clone\Private\FindPlayerLocation.cpp">
+      <Filter>Source\TLOU_Clone\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\TLOU_Clone\Private\FindRandomLocation.cpp">
       <Filter>Source\TLOU_Clone\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\TLOU_Clone\Private\ModularAIController.cpp">
       <Filter>Source\TLOU_Clone\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\TLOU_Clone\Private\MyCharacter.cpp">
+    <ClCompile Include="..\..\Source\TLOU_Clone\Private\ModularAIEnemy.cpp">
       <Filter>Source\TLOU_Clone\Private</Filter>
     </ClCompile>
     <Filter Include="Source\TLOU_Clone\Public">
-      <UniqueIdentifier>{70666F55-7E38-44D0-8E24-DD24D3F56FEF}</UniqueIdentifier>
+      <UniqueIdentifier>{5A15EED4-4CB5-48D8-A015-FC1C69B543F1}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\TLOU_Clone\Public\blackboard_keys.h">
+      <Filter>Source\TLOU_Clone\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\TLOU_Clone\Public\FindPlayerLocation.h">
+      <Filter>Source\TLOU_Clone\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\TLOU_Clone\Public\FindRandomLocation.h">
       <Filter>Source\TLOU_Clone\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\TLOU_Clone\Public\ModularAIController.h">
       <Filter>Source\TLOU_Clone\Public</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\TLOU_Clone\Public\MyCharacter.h">
-      <Filter>Source\TLOU_Clone\Public</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\TLOU_Clone\blackboard_keys.h">
-      <Filter>Source\TLOU_Clone</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\TLOU_Clone\Public\blackboard_keys.h">
+    <ClInclude Include="..\..\Source\TLOU_Clone\Public\ModularAIEnemy.h">
       <Filter>Source\TLOU_Clone\Public</Filter>
     </ClInclude>
   </ItemGroup>

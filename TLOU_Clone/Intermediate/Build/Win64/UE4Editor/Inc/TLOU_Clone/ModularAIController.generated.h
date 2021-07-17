@@ -17,13 +17,11 @@ class AActor;
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_SPARSE_DATA
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execOnPawnHearing); \
 	DECLARE_FUNCTION(execOnTargetDetected);
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execOnPawnHearing); \
 	DECLARE_FUNCTION(execOnTargetDetected);
 
 
@@ -74,7 +72,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AModularAIController); \
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__MaxRiskLevel() { return STRUCT_OFFSET(AModularAIController, MaxRiskLevel); } \
+	FORCEINLINE static uint32 __PPO__riskLevel() { return STRUCT_OFFSET(AModularAIController, riskLevel); } \
 	FORCEINLINE static uint32 __PPO__btreeComp() { return STRUCT_OFFSET(AModularAIController, btreeComp); } \
 	FORCEINLINE static uint32 __PPO__btree() { return STRUCT_OFFSET(AModularAIController, btree); } \
 	FORCEINLINE static uint32 __PPO__BlackboardComp() { return STRUCT_OFFSET(AModularAIController, BlackboardComp); }

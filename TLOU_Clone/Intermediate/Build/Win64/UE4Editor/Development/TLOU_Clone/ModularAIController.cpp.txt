@@ -107,3 +107,10 @@ C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Edi
 C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+D:\Unreal\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Public\blackboard_keys.h
+D:\Unreal\TLOU_Clone\TLOU_Clone\Source\TLOU_Clone\Public\ModularAIEnemy.h
+D:\Unreal\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Inc\TLOU_Clone\ModularAIEnemy.generated.h
+C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime/AIModule/Classes/Actions/PawnActionsComponent.h
+C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Source\Runtime\AIModule\Classes\Actions/PawnAction.h
+C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AIModule\PawnAction.generated.h
+C:\Program Files (x86)\Epic Games\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\AIModule\PawnActionsComponent.generated.h
