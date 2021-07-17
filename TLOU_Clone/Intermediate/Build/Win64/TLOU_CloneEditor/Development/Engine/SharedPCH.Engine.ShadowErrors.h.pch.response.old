@@ -253,17 +253,17 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30037\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/I "C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine"
-/Yc"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
-/Fo"C:\Users\cjk18\Documents\Unreal Projects\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+/I D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine
+/Yc"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
+/Fo"D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\TLOU_CloneEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 /TP
 /GR-
 /W4

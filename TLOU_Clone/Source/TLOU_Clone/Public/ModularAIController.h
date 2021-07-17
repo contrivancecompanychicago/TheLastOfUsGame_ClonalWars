@@ -41,6 +41,9 @@ public:
 		float DistanceToPlayer = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+		float RiskLevel = 0.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
 		float MaxRiskLevel = 100.f;
 
 public:
@@ -58,8 +61,6 @@ public:
 
 private:
 
-	UPROPERTY(VisibleAnywhere, Category = "AI")
-		float riskLevel = 0.f;
 
 	UMaterialInstanceDynamic* material_instance;
 

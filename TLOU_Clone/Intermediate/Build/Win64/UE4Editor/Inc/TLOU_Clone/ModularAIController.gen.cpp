@@ -123,13 +123,13 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanceToPlayer;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_RiskLevel_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_RiskLevel;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxRiskLevel_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxRiskLevel;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_riskLevel_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_riskLevel;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_btreeComp_MetaData[];
 #endif
@@ -211,19 +211,19 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer = { "DistanceToPlayer", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, DistanceToPlayer), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_RiskLevel_MetaData[] = {
+		{ "Category", "AI" },
+		{ "ModuleRelativePath", "Public/ModularAIController.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_RiskLevel = { "RiskLevel", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, RiskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_RiskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_RiskLevel_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData[] = {
 		{ "Category", "AI" },
 		{ "ModuleRelativePath", "Public/ModularAIController.h" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel = { "MaxRiskLevel", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, MaxRiskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData[] = {
-		{ "Category", "AI" },
-		{ "ModuleRelativePath", "Public/ModularAIController.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel = { "riskLevel", nullptr, (EPropertyFlags)0x0040000000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AModularAIController, riskLevel), METADATA_PARAMS(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AModularAIController_Statics::NewProp_btreeComp_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -258,8 +258,8 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_AIFieldOfView,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToDetectedPlayer,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_DistanceToPlayer,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_RiskLevel,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_MaxRiskLevel,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_riskLevel,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_btreeComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_btree,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AModularAIController_Statics::NewProp_BlackboardComp,
@@ -291,7 +291,7 @@ void EmptyLinkFunctionForGeneratedCodeModularAIController() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AModularAIController, 3588106736);
+	IMPLEMENT_CLASS(AModularAIController, 1043770649);
 	template<> TLOU_CLONE_API UClass* StaticClass<AModularAIController>()
 	{
 		return AModularAIController::StaticClass();

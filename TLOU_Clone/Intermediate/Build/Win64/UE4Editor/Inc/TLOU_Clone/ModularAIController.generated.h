@@ -72,7 +72,6 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AModularAIController); \
 
 
 #define TLOU_Clone_Source_TLOU_Clone_Public_ModularAIController_h_18_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__riskLevel() { return STRUCT_OFFSET(AModularAIController, riskLevel); } \
 	FORCEINLINE static uint32 __PPO__btreeComp() { return STRUCT_OFFSET(AModularAIController, btreeComp); } \
 	FORCEINLINE static uint32 __PPO__btree() { return STRUCT_OFFSET(AModularAIController, btree); } \
 	FORCEINLINE static uint32 __PPO__BlackboardComp() { return STRUCT_OFFSET(AModularAIController, BlackboardComp); }

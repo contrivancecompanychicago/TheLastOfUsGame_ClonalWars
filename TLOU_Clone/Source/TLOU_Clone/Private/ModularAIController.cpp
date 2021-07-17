@@ -88,7 +88,7 @@ void AModularAIController::OnTargetDetected(const TArray<AActor*>& DetectedPawns
 	for (size_t i = 0; i < DetectedPawns.Num(); i++)
 	{
 		DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
-		riskLevel = MaxRiskLevel;
+		RiskLevel = MaxRiskLevel;
 	}
 	plus = 20.0f;
 	bIsPlayerDetected = true;
@@ -133,14 +133,14 @@ void AModularAIController::RiskLevelTimer()
 			}
 		}
 
-		if (riskLevel >= MaxRiskLevel)
+		if (RiskLevel >= MaxRiskLevel)
 		{
 			ChangeBodyColor(FLinearColor::Red);
-			riskLevel = 0.0f;
+			RiskLevel = 0.0f;
 		}
-		riskLevel += plus;
+		RiskLevel += plus;
 
-		if (plus < 0.0f && riskLevel <= 0.0f) {
+		if (plus < 0.0f && RiskLevel <= 0.0f) {
 			get_blackboard()->SetValueAsBool(bb_keys::can_see_player, false);
 			Cast<AModularAIEnemy>(GetCharacter())->SetIsChase(false);
 			bIsPlayerDetected = false;
