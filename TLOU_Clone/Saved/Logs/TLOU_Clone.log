@@ -1486,3 +1486,176 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2021.07.17-10.26.33:017][237]LogUObjectHash: Compacting FUObjectHashTables data took   6.32ms
 [2021.07.17-10.26.33:065][237]BlueprintLog: New page: ModularAIEnemy 컴파일
 [2021.07.17-10.26.33:269][237]LogUObjectHash: Compacting FUObjectHashTables data took   5.05ms
+[2021.07.17-10.31.37:369][873]LogUObjectHash: Compacting FUObjectHashTables data took   4.47ms
+[2021.07.17-10.31.37:379][873]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Levels/AI_Test_Level1" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/Levels/AI_Test_Level1_Auto2.umap" SILENT=true AUTOSAVING=true KEEPDIRTY=false
+[2021.07.17-10.31.37:408][873]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/AI_Test_Level1_Auto2F9D269714EBC4ED2CF35C589964EF738.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/Levels/AI_Test_Level1_Auto2.umap'
+[2021.07.17-10.31.37:410][873]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/AI_Test_Level1' took 0.086
+[2021.07.17-10.31.37:410][873]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.086
+[2021.07.17-10.31.37:411][873]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/AI/Blueprints/ModularAIEnemy] ([1] browsable assets)...
+[2021.07.17-10.31.37:424][873]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/AI/Blueprints/ModularAIEnemy.ModularAIEnemy]
+[2021.07.17-10.31.37:424][873]OBJ SavePackage: Finished generating thumbnails for package [/Game/AI/Blueprints/ModularAIEnemy]
+[2021.07.17-10.31.37:424][873]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/AI/Blueprints/ModularAIEnemy" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Blueprints/ModularAIEnemy_Auto2.uasset" SILENT=false AUTOSAVING=true
+[2021.07.17-10.31.37:482][873]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/ModularAIEnemy_Auto280F3DC9A4F9D9593B1348A8B5C5AC83A.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Blueprints/ModularAIEnemy_Auto2.uasset'
+[2021.07.17-10.31.37:484][873]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/AI/Anim/ZombiAnim_BP] ([1] browsable assets)...
+[2021.07.17-10.31.37:484][873]OBJ SavePackage: Finished generating thumbnails for package [/Game/AI/Anim/ZombiAnim_BP]
+[2021.07.17-10.31.37:484][873]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/AI/Anim/ZombiAnim_BP" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Anim/ZombiAnim_BP_Auto2.uasset" SILENT=false AUTOSAVING=true
+[2021.07.17-10.31.37:535][873]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/ZombiAnim_BP_Auto2C9F95BCA482C3CE00B1C078BBA32C07C.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Anim/ZombiAnim_BP_Auto2.uasset'
+[2021.07.17-10.31.37:537][873]LogFileHelpers: Auto-saving content packages took 0.126
+[2021.07.17-10.35.15:121][599]LogTemp: Repeating last play command: 새 에디터 창 (PIE)
+[2021.07.17-10.35.15:131][599]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2021.07.17-10.35.15:131][599]PIE: New page: PIE 세션: AI_Test_Level1 (2021. 7. 18. 오전 4:35:15)
+[2021.07.17-10.35.15:131][599]LogPlayLevel: Creating play world package: /Game/Levels/UEDPIE_0_AI_Test_Level1
+[2021.07.17-10.35.15:136][599]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004849s)
+[2021.07.17-10.35.15:138][599]LogAIModule: Creating AISystem for world AI_Test_Level1
+[2021.07.17-10.35.15:139][599]LogPlayLevel: PIE: World Init took: (0.002046s)
+[2021.07.17-10.35.15:139][599]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Levels/AI_Test_Level1.AI_Test_Level1 to /Game/Levels/UEDPIE_0_AI_Test_Level1.AI_Test_Level1 (0.007092s)
+[2021.07.17-10.35.15:174][599]LogUObjectHash: Compacting FUObjectHashTables data took   4.97ms
+[2021.07.17-10.35.15:176][599]LogAudio: Display: Creating Audio Device:                 Id: 10, Scope: Unique, Realtime: True
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2021.07.17-10.35.15:176][599]LogAudio: Display: AudioDevice MaxSources: 32
+[2021.07.17-10.35.15:176][599]LogAudio: Display: Using built-in audio occlusion.
+[2021.07.17-10.35.15:176][599]LogAudioMixer: Display: Initializing audio mixer.
+[2021.07.17-10.35.15:196][599]LogAudioMixer: Display: 0: FrontLeft
+[2021.07.17-10.35.15:196][599]LogAudioMixer: Display: 1: FrontRight
+[2021.07.17-10.35.15:222][599]LogAudioMixer: Display: Using Audio Device LG HDR 4K(NVIDIA High Definition Audio)
+[2021.07.17-10.35.15:223][599]LogAudioMixer: Display: Initializing Sound Submixes...
+[2021.07.17-10.35.15:223][599]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2021.07.17-10.35.15:223][599]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2021.07.17-10.35.15:224][599]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2021.07.17-10.35.15:224][599]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2021.07.17-10.35.15:224][599]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2021.07.17-10.35.15:244][599]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2021.07.17-10.35.15:244][599]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2021.07.17-10.35.15:244][599]LogInit: FAudioDevice initialized.
+[2021.07.17-10.35.15:244][599]LogAudio: Display: Audio Device (ID: 10) registered with world 'AI_Test_Level1'.
+[2021.07.17-10.35.15:276][599]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.07.17-10.35.15:276][599]LogLoad: Game class is 'ThirdPersonGameMode_C'
+[2021.07.17-10.35.15:280][599]LogWorld: Bringing World /Game/Levels/UEDPIE_0_AI_Test_Level1.AI_Test_Level1 up for play (max tick rate 0) at 2021.07.17-19.35.15
+[2021.07.17-10.35.15:280][599]LogTemp: Warning: UBehaviorTree Success
+[2021.07.17-10.35.15:281][599]LogTemp: Warning: UBehaviorTree Success
+[2021.07.17-10.35.15:281][599]LogWorld: Bringing up level for play took: 0.003754
+[2021.07.17-10.35.15:281][599]LogOnline: OSS: Creating online subsystem instance for: :Context_21
+[2021.07.17-10.35.15:286][599]LogTemp: Warning: All System Set!
+[2021.07.17-10.35.15:286][599]LogTemp: Warning: All System Set!
+[2021.07.17-10.35.15:289][599]PIE: 서버가 로그인했습니다.
+[2021.07.17-10.35.15:291][599]PIE: 에디터에서 플레이 총 시작 시간 0.163초입니다.
+[2021.07.17-10.35.16:123][683]LogTemp: Warning: riskLevel = 100.000000
+[2021.07.17-10.35.17:128][798]LogTemp: Warning: riskLevel = 100.000000
+[2021.07.17-10.35.18:126][913]LogTemp: Warning: riskLevel = 100.000000
+[2021.07.17-10.35.18:790][986]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.07.17-10.35.18:790][986]LogWorld: BeginTearingDown for /Game/Levels/UEDPIE_0_AI_Test_Level1
+[2021.07.17-10.35.18:791][986]LogSlate: Window 'TLOU_Clone 프리뷰 [NetMode: Standalone]  (64-bit/Windows)' being destroyed
+[2021.07.17-10.35.18:799][986]LogWorld: UWorld::CleanupWorld for AI_Test_Level1, bSessionEnded=true, bCleanupResources=true
+[2021.07.17-10.35.18:800][986]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.07.17-10.35.18:827][986]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2021.07.17-10.35.18:894][986]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.07.17-10.35.18:921][986]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.07.17-10.35.18:923][986]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.07.17-10.35.18:950][986]LogUObjectHash: Compacting FUObjectHashTables data took   3.34ms
+[2021.07.17-10.35.18:998][987]LogPlayLevel: Display: Destroying online subsystem :Context_21
+[2021.07.17-10.37.20:709][420]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2021.07.17-10.39.34:541][595]Cmd: CAMERA SNAP
+[2021.07.17-10.39.34:541][595]Snapped camera to the first selected object.
+[2021.07.17-10.41.41:500][980]LogUObjectHash: Compacting FUObjectHashTables data took   4.91ms
+[2021.07.17-10.41.41:511][980]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Levels/AI_Test_Level1" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/Levels/AI_Test_Level1_Auto3.umap" SILENT=true AUTOSAVING=true KEEPDIRTY=false
+[2021.07.17-10.41.41:542][980]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/AI_Test_Level1_Auto38CDF301B421A75A1DCC24685CB94A31D.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/Levels/AI_Test_Level1_Auto3.umap'
+[2021.07.17-10.41.41:546][980]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/AI_Test_Level1' took 0.086
+[2021.07.17-10.41.41:546][980]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.086
+[2021.07.17-10.44.53:039][810]LogEditorViewport: Clicking on Actor (LMB): TargetPoint (Waypoint02)
+[2021.07.17-10.44.54:040][915]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.44.54:917][  5]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.44.55:423][ 62]LogEditorViewport: Clicking on Actor (LMB): TargetPoint (Waypoint02)
+[2021.07.17-10.44.56:794][209]LogEditorViewport: Clicking on Actor (LMB): ModularAIEnemy_C (ModularAIEnemy)
+[2021.07.17-10.45.10:921][528]LogSlate: Took 0.000360 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensedItalic.ttf' (160K)
+[2021.07.17-10.47.07:336][534]LogEditorViewport: Clicking on Actor (LMB): ModularAIEnemy_C (ModularAIEnemy)
+[2021.07.17-10.47.20:346][688]Candidate modules for hot reload:
+[2021.07.17-10.47.20:346][688]  TLOU_Clone
+[2021.07.17-10.47.20:347][688]Launching UnrealBuildTool... [C:/Program Files (x86)/Game/UE_4.26/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=TLOU_Clone,2423 TLOU_CloneEditor Win64 Development -Project="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/TLOU_Clone.uproject" "D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/TLOU_Clone.uproject"  -IgnoreJunk]
+[2021.07.17-10.47.20:351][688]Warning: Starting HotReload took  0.1s.
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog: New page: 컴파일 - 2021. 7. 18. 오전 4:47:25
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Unreal\TLOU\TLOU_Clone).
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog: Building TLOU_CloneEditor...
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog: Using Visual Studio 2019 14.25.28614 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog: Building 4 actions with 12 processes...
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog:   [1/4] DefaultEnemy.cpp
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog:   [2/4] UE4Editor-TLOU_Clone-2423.lib
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog:      D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-2423.lib ???̺귯?? ?? D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-2423.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog:   [3/4] UE4Editor-TLOU_Clone-2423.dll
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog:      D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-2423.suppressed.lib ???̺귯?? ?? D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-2423.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog:   [4/4] TLOU_CloneEditor.target
+[2021.07.17-10.47.25:022][ 33]CompilerResultsLog: Total time in Parallel executor: 2.96 seconds
+[2021.07.17-10.47.25:023][ 33]CompilerResultsLog: Total execution time: 4.50 seconds
+[2021.07.17-10.47.25:023][ 33]LogMainFrame: MainFrame: Module compiling took 4.700 seconds
+[2021.07.17-10.47.25:103][ 33]LogTemp: Warning: UBehaviorTree Success
+[2021.07.17-10.47.25:112][ 33]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'TLOU_Clone' in 0.0004 seconds. Added 4 classes and 3 folders.
+[2021.07.17-10.47.25:120][ 33]Display: HotReload successful (2 functions remapped  0 scriptstructs remapped)
+[2021.07.17-10.47.25:254][ 33]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0129 seconds. Added 3606 classes and 864 folders.
+[2021.07.17-10.47.25:254][ 33]Display: HotReload took  5.0s.
+[2021.07.17-10.47.42:664][642]BlueprintLog: New page: ModularAIEnemy 컴파일
+[2021.07.17-10.47.42:929][642]LogUObjectHash: Compacting FUObjectHashTables data took   8.88ms
+[2021.07.17-10.48.46:405][397]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.46:926][450]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.47:408][503]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.47:833][550]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.48:296][603]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.48:776][657]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.49:108][693]LogEditorViewport: Clicking on Actor (LMB): TargetPoint (Waypoint01)
+[2021.07.17-10.48.51:553][964]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.07.17-10.48.52:684][ 89]LogEditorViewport: Clicking on Actor (LMB): ModularAIEnemy_C (ModularAIEnemy)
+[2021.07.17-10.49.32:179][328]BlueprintLog: New page: ModularAIEnemy 컴파일
+[2021.07.17-10.49.32:194][328]LogClass: Warning: Type mismatch in Waypoints of ModularAIEnemy_C - Previous (ObjectProperty) Current(ArrayProperty) for package:  FObjectReader
+[2021.07.17-10.49.32:196][328]LogBlueprint: Warning: [AssetLog] D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Content\AI\Blueprints\ModularAIEnemy.uasset: [Compiler]  에 대한 'None' 기본값을 파싱할 수 없습니다. 프로퍼티: Waypoints.
+[2021.07.17-10.49.32:395][328]LogUObjectHash: Compacting FUObjectHashTables data took   5.76ms
+[2021.07.17-10.49.40:041][214]BlueprintLog: New page: ModularAIEnemy 컴파일
+[2021.07.17-10.49.40:217][214]LogUObjectHash: Compacting FUObjectHashTables data took   4.23ms
+[2021.07.17-10.49.59:501][163]BlueprintLog: New page: ModularAIEnemy 컴파일
+[2021.07.17-10.49.59:669][163]LogUObjectHash: Compacting FUObjectHashTables data took   4.02ms
+[2021.07.17-10.50.28:967][165]BlueprintLog: New page: ModularAIEnemy 컴파일
+[2021.07.17-10.50.29:147][165]LogUObjectHash: Compacting FUObjectHashTables data took   5.30ms
+[2021.07.17-10.51.22:907][609]BlueprintLog: New page: ModularAIEnemy 컴파일
+[2021.07.17-10.51.23:093][609]LogUObjectHash: Compacting FUObjectHashTables data took   5.68ms
+[2021.07.17-10.52.06:626][435]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2021.07.17-10.52.18:258][554]LogEditorViewport: Clicking on Actor (LMB): ModularAIEnemy_C (ModularAIEnemy)
+[2021.07.17-10.53.01:719][868]LogUObjectHash: Compacting FUObjectHashTables data took   4.39ms
+[2021.07.17-10.53.01:725][868]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Levels/AI_Test_Level1" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/Levels/AI_Test_Level1_Auto4.umap" SILENT=true AUTOSAVING=true KEEPDIRTY=false
+[2021.07.17-10.53.01:752][868]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/AI_Test_Level1_Auto483B252FA404DFC033933D4B7A11E8938.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/Levels/AI_Test_Level1_Auto4.umap'
+[2021.07.17-10.53.01:755][868]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Levels/AI_Test_Level1' took 0.068
+[2021.07.17-10.53.01:755][868]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.068
+[2021.07.17-10.53.01:756][868]OBJ SavePackage: Generating thumbnails for [1] asset(s) in package [/Game/AI/Blueprints/ModularAIEnemy] ([1] browsable assets)...
+[2021.07.17-10.53.01:768][868]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/AI/Blueprints/ModularAIEnemy.ModularAIEnemy]
+[2021.07.17-10.53.01:768][868]OBJ SavePackage: Finished generating thumbnails for package [/Game/AI/Blueprints/ModularAIEnemy]
+[2021.07.17-10.53.01:768][868]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/AI/Blueprints/ModularAIEnemy" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Blueprints/ModularAIEnemy_Auto4.uasset" SILENT=false AUTOSAVING=true
+[2021.07.17-10.53.01:826][868]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/ModularAIEnemy_Auto49EDBF26B4E1D7DCC2A3893A5D5D145AB.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Blueprints/ModularAIEnemy_Auto4.uasset'
+[2021.07.17-10.53.01:828][868]OBJ SavePackage: Generating thumbnails for [0] asset(s) in package [/Game/AI/Anim/ZombiAnim_BP] ([1] browsable assets)...
+[2021.07.17-10.53.01:828][868]OBJ SavePackage: Finished generating thumbnails for package [/Game/AI/Anim/ZombiAnim_BP]
+[2021.07.17-10.53.01:828][868]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/AI/Anim/ZombiAnim_BP" FILE="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Anim/ZombiAnim_BP_Auto4.uasset" SILENT=false AUTOSAVING=true
+[2021.07.17-10.53.01:876][868]LogSavePackage: Moving 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/ZombiAnim_BP_Auto496E84480482EB08EE14DD2921BEE8498.tmp' to 'D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/Saved/Autosaves/Game/AI/Anim/ZombiAnim_BP_Auto4.uasset'
+[2021.07.17-10.53.01:877][868]LogFileHelpers: Auto-saving content packages took 0.122
+[2021.07.17-10.53.05:708][133]Candidate modules for hot reload:
+[2021.07.17-10.53.05:708][133]  TLOU_Clone
+[2021.07.17-10.53.05:708][133]Launching UnrealBuildTool... [C:/Program Files (x86)/Game/UE_4.26/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=TLOU_Clone,4179 TLOU_CloneEditor Win64 Development -Project="D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/TLOU_Clone.uproject" "D:/Unreal/TLOU/TLOU_Clone/TLOU_Clone/TLOU_Clone.uproject"  -IgnoreJunk]
+[2021.07.17-10.53.05:712][133]Warning: Starting HotReload took  0.0s.
+[2021.07.17-10.53.09:405][252]CompilerResultsLog: New page: 컴파일 - 2021. 7. 18. 오전 4:53:09
+[2021.07.17-10.53.09:406][252]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Unreal\TLOU\TLOU_Clone).
+[2021.07.17-10.53.09:406][252]CompilerResultsLog: Building TLOU_CloneEditor...
+[2021.07.17-10.53.09:406][252]CompilerResultsLog: Using Visual Studio 2019 14.25.28614 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.07.17-10.53.09:406][252]CompilerResultsLog: Building 3 actions with 12 processes...
+[2021.07.17-10.53.09:406][252]CompilerResultsLog:   [1/3] UE4Editor-TLOU_Clone-4179.lib
+[2021.07.17-10.53.09:406][252]CompilerResultsLog:      D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-4179.lib ???̺귯?? ?? D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-4179.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2021.07.17-10.53.09:406][252]CompilerResultsLog:   [2/3] UE4Editor-TLOU_Clone-4179.dll
+[2021.07.17-10.53.09:406][252]CompilerResultsLog:      D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-4179.suppressed.lib ???̺귯?? ?? D:\Unreal\TLOU\TLOU_Clone\TLOU_Clone\Intermediate\Build\Win64\UE4Editor\Development\TLOU_Clone\UE4Editor-TLOU_Clone-4179.suppressed.exp ??ü?? ?????ϰ? ?ֽ??ϴ?.
+[2021.07.17-10.53.09:406][252]CompilerResultsLog:   [3/3] TLOU_CloneEditor.target
+[2021.07.17-10.53.09:406][252]CompilerResultsLog: Total time in Parallel executor: 1.91 seconds
+[2021.07.17-10.53.09:406][252]CompilerResultsLog: Total execution time: 3.36 seconds
+[2021.07.17-10.53.09:406][252]LogMainFrame: MainFrame: Module compiling took 3.703 seconds
+[2021.07.17-10.53.09:465][252]LogTemp: Warning: UBehaviorTree Success
+[2021.07.17-10.53.09:470][252]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'TLOU_Clone' in 0.0003 seconds. Added 4 classes and 3 folders.
+[2021.07.17-10.53.09:476][252]Display: HotReload successful (2 functions remapped  0 scriptstructs remapped)
+[2021.07.17-10.53.09:591][252]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0153 seconds. Added 3606 classes and 864 folders.
+[2021.07.17-10.53.09:591][252]Display: HotReload took  3.9s.
