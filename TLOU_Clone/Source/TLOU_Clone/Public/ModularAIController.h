@@ -50,7 +50,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "AIPerception")
 		void OnTargetDetected(const TArray<AActor*>& DetectedPawns);
 
-
 	AModularAIController(FObjectInitializer const& object_initializer = FObjectInitializer::Get());
 
 	virtual void BeginPlay() override;
@@ -75,11 +74,13 @@ private:
 
 
 	bool bIsPlayerDetected;
-	float plus = 20.0f;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
+	float perRiskLevel = 33.3f;
 	int secflags = 0;
 	bool ChangeBodyColorFlag = false;
 	FTimerHandle MoveAIHandle;
-
+	ACharacter* targetPlayer = nullptr;
 private:
 
 	void SetPerceptionSystem();

@@ -32,10 +32,50 @@ void AModularAIEnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 }
 
-void AModularAIEnemy::SetIsChase(bool b)
+void AModularAIEnemy::SetIdleState()
 {
-	IsChase = b;
+	this->InitAIState();
+	UE_LOG(LogTemp, Warning, TEXT("Set Is Idle State"));
+
+}
+
+void AModularAIEnemy::SetIsChasing()
+{
+	this->InitAIState();
+	UE_LOG(LogTemp, Warning, TEXT("Set Is Chase"));
+	IsChasing = true;
 	StatusChanged();
 }
 
+void AModularAIEnemy::SetIsSearching()
+{
+	this->InitAIState();
+	UE_LOG(LogTemp, Warning, TEXT("Set Is Searching"));
+	IsSearching = true;
+	StatusChanged();
+}
+
+void AModularAIEnemy::SetIsAttacking()
+{
+	this->InitAIState();
+	UE_LOG(LogTemp, Warning, TEXT("Set Is Attacking"));
+	IsAttacking = true;
+	StatusChanged();
+}
+
+void AModularAIEnemy::SetIsWalking()
+{
+	this->InitAIState();
+	UE_LOG(LogTemp, Warning, TEXT("Set Is Walking"));
+	IsWalking = true;
+	StatusChanged();
+}
+
+void AModularAIEnemy::InitAIState()
+{
+	IsAttacking = false;
+	IsWalking = false;
+	IsSearching = false;
+	IsChasing = false;
+}
 

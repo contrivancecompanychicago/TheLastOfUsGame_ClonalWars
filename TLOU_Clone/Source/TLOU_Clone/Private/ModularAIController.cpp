@@ -39,7 +39,7 @@ void AModularAIController::BeginPlay()
 {
 	Super::BeginPlay();
 	material_instance = UMaterialInstanceDynamic::Create(this->GetCharacter()->GetMesh()->GetMaterial(0), this);
-
+	targetPlayer = Cast<ACharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
 
 	RunBehaviorTree(btree);
 	btreeComp->StartTree(*btree);
@@ -64,8 +64,7 @@ void AModularAIController::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 
-	ACharacter* Player = Cast<ACharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-	DistanceToPlayer = GetPawn()->GetDistanceTo(Player);
+	DistanceToPlayer = GetPawn()->GetDistanceTo(targetPlayer);
 }
 
 FRotator AModularAIController::GetControlRotation() const
@@ -85,16 +84,26 @@ UBlackboardComponent* AModularAIController::get_blackboard() const
 
 void AModularAIController::OnTargetDetected(const TArray<AActor*>& DetectedPawns)
 {
-	for (size_t i = 0; i < DetectedPawns.Num(); i++)
+	if (!bIsPlayerDetected) 
 	{
-		DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
-		RiskLevel = MaxRiskLevel;
-	}
-	plus = 20.0f;
-	bIsPlayerDetected = true;
+		for (size_t i = 0; i < DetectedPawns.Num(); i++)
+		{
+			//DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i
+			// 20210718 LSC 플레이어 위치 수정
+			if (DetectedPawns[i] == (AActor*)targetPlayer)
+			{
+				DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
+				RiskLevel = MaxRiskLevel;
+				//perRiskLevel = 20.0f;
+				bIsPlayerDetected = true;
 
-	get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
-	Cast<AModularAIEnemy>(GetCharacter())->SetIsChase(true);
+				ChangeBodyColor(FLinearColor::Red);
+				get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
+				Cast<AModularAIEnemy>(GetCharacter())->SetIsChasing();
+				return;
+			}
+		}
+	}
 }
 
 void AModularAIController::SetPerceptionSystem()
@@ -118,36 +127,40 @@ void AModularAIController::SetPerceptionSystem()
 
 void AModularAIController::RiskLevelTimer()
 {
+	// 플레이어를 인식하면 RiskLevel를 perRiskLevel만큼 증가
 	if (bIsPlayerDetected)
 	{
 		if (DistanceToPlayer >= AISightRadius)
 		{
-			if (secflags == 3)
+			RiskLevel -= perRiskLevel;
+			if (RiskLevel <= 0.f)
 			{
-				plus -= 5.f;
-				secflags = 0;
+				RiskLevel = 0.f;
+				bIsPlayerDetected = false;
+				Cast<AModularAIEnemy>(GetCharacter())->SetIdleState();
+
+				ChangeBodyColorFlag = false;
+				ChangeBodyColor(FLinearColor::White);
+				ChangeBodyColorFlag = false;
 			}
-			else
+			else if (RiskLevel <= 0.333f * MaxRiskLevel)
 			{
-				secflags += 1;
+				// etSearching State
+				get_blackboard()->SetValueAsBool(bb_keys::can_see_player, false);
+				Cast<AModularAIEnemy>(GetCharacter())->SetIsSearching();
+
+				ChangeBodyColorFlag = false;
+				ChangeBodyColor(FLinearColor::Yellow);
+				ChangeBodyColorFlag = false;
 			}
 		}
-
-		if (RiskLevel >= MaxRiskLevel)
+		else
 		{
-			ChangeBodyColor(FLinearColor::Red);
-			RiskLevel = 0.0f;
-		}
-		RiskLevel += plus;
-
-		if (plus < 0.0f && RiskLevel <= 0.0f) {
-			get_blackboard()->SetValueAsBool(bb_keys::can_see_player, false);
-			Cast<AModularAIEnemy>(GetCharacter())->SetIsChase(false);
-			bIsPlayerDetected = false;
-
-			ChangeBodyColorFlag = false;
-			ChangeBodyColor(FLinearColor::White);
-			ChangeBodyColorFlag = false;
+			// 20210718 LSC
+			if (RiskLevel <= MaxRiskLevel)
+			{
+				RiskLevel += perRiskLevel;
+			}
 		}
 	}
 }

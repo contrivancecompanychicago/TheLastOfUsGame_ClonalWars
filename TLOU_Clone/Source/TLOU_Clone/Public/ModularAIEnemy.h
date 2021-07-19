@@ -16,7 +16,13 @@ public:
 	AModularAIEnemy();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	bool IsChase = false;
+		bool IsChasing = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool IsSearching = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool IsAttacking = false;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool IsWalking = false;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -28,7 +34,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	void SetIsChase(bool b);
+	void SetIdleState();
+	void SetIsChasing();
+	void SetIsSearching();
+	void SetIsAttacking();
+	void SetIsWalking();
+	void InitAIState();
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void StatusChanged();
