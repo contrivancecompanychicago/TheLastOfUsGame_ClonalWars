@@ -35,6 +35,18 @@ public:
 		float AIFieldOfView = 90.f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
+		class UAISenseConfig_Hearing* HearingConfig;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+		float AIHearingRange = 1500.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+		float AIHearingAge = 5.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
+		float AILoseHearingRange = AILoseHearingRange + 50.f;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
 		float DistanceToDetectedPlayer = 0.0f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
