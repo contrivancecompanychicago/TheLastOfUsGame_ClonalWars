@@ -84,6 +84,8 @@ UBlackboardComponent* AModularAIController::get_blackboard() const
 
 void AModularAIController::OnTargetDetected(const TArray<AActor*>& DetectedPawns)
 {
+	AModularAIEnemy* infector = Cast<AModularAIEnemy>(GetCharacter());
+
 	if (!bIsPlayerDetected) 
 	{
 		for (size_t i = 0; i < DetectedPawns.Num(); i++)
@@ -92,16 +94,27 @@ void AModularAIController::OnTargetDetected(const TArray<AActor*>& DetectedPawns
 			// 20210718 LSC 플레이어 위치 수정
 			if (DetectedPawns[i] == (AActor*)targetPlayer)
 			{
-				DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
+				//DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
 				RiskLevel = MaxRiskLevel;
 				//perRiskLevel = 20.0f;
 				bIsPlayerDetected = true;
 
 				ChangeBodyColor(FLinearColor::Red);
 				get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
-				Cast<AModularAIEnemy>(GetCharacter())->SetIsChasing();
+				infector->SetIsChasing();
 				return;
 			}
+		}
+	}
+	else 
+	{
+		// Searching state && DistanceToPlayer <= SightRadius
+		if (infector->IsSearching&& DistanceToPlayer <= AISightRadius)
+		{
+			// SetChasing
+			ChangeBodyColor(FLinearColor::Red);
+			get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
+			infector->SetIsChasing();
 		}
 	}
 }
@@ -125,29 +138,38 @@ void AModularAIController::SetPerceptionSystem()
 
 }
 
+void AModularAIController::SetIdle()
+{
+	RiskLevel = 0.f;
+	bIsPlayerDetected = false;
+	Cast<AModularAIEnemy>(GetCharacter())->SetIdleState();
+
+	ChangeBodyColorFlag = false;
+	ChangeBodyColor(FLinearColor::White);
+	ChangeBodyColorFlag = false;
+}
+
 void AModularAIController::RiskLevelTimer()
 {
 	// 플레이어를 인식하면 RiskLevel를 perRiskLevel만큼 증가
 	if (bIsPlayerDetected)
 	{
+		float DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(targetPlayer);
+		AModularAIEnemy* infector = Cast<AModularAIEnemy>(GetCharacter());
 		if (DistanceToPlayer >= AISightRadius)
 		{
-			RiskLevel -= perRiskLevel;
-			if (RiskLevel <= 0.f)
+			if(RiskLevel > 0.333f * MaxRiskLevel)
+				RiskLevel -= perRiskLevel;
+			
+			
+			UE_LOG(LogTemp, Warning, TEXT("Searching (%d) DistanceToPlayer(%f)"),infector->IsSearching,DistanceToPlayer);
+			// TODO: infector->isSearching && infector->GetActorsLocation() <= targetLocation of Blackboard
+				// SetIdle
+			if (RiskLevel <= 0.333f * MaxRiskLevel)
 			{
-				RiskLevel = 0.f;
-				bIsPlayerDetected = false;
-				Cast<AModularAIEnemy>(GetCharacter())->SetIdleState();
-
-				ChangeBodyColorFlag = false;
-				ChangeBodyColor(FLinearColor::White);
-				ChangeBodyColorFlag = false;
-			}
-			else if (RiskLevel <= 0.333f * MaxRiskLevel)
-			{
-				// etSearching State
+				// SetSearching State
 				get_blackboard()->SetValueAsBool(bb_keys::can_see_player, false);
-				Cast<AModularAIEnemy>(GetCharacter())->SetIsSearching();
+				infector->SetIsSearching();
 
 				ChangeBodyColorFlag = false;
 				ChangeBodyColor(FLinearColor::Yellow);

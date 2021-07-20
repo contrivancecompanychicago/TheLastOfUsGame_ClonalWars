@@ -35,9 +35,6 @@ public:
 		float AIFieldOfView = 90.f;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
-		float DistanceToDetectedPlayer = 0.0f;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "AI")
 		float DistanceToPlayer = 0.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
@@ -49,6 +46,8 @@ public:
 public:
 	UFUNCTION(BlueprintCallable, Category = "AIPerception")
 		void OnTargetDetected(const TArray<AActor*>& DetectedPawns);
+	UFUNCTION(BlueprintCallable, Category = "AIPerception")
+		void SetIdle();
 
 	AModularAIController(FObjectInitializer const& object_initializer = FObjectInitializer::Get());
 
@@ -59,7 +58,7 @@ public:
 	class UBlackboardComponent* get_blackboard() const;
 
 private:
-
+	
 
 	UMaterialInstanceDynamic* material_instance;
 
