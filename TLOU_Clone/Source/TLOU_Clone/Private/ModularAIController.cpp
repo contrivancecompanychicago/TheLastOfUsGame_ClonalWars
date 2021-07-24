@@ -22,7 +22,7 @@
 AModularAIController::AModularAIController(FObjectInitializer const& object_initializer)
 {
 	static ConstructorHelpers::FObjectFinder<UBehaviorTree> obj(TEXT("BehaviorTree'/Game/AI/Blueprints/BT_AIEnemy.BT_AIEnemy'"));
-	if (obj.Succeeded()) 
+	if (obj.Succeeded())
 	{
 		btree = obj.Object;
 		UE_LOG(LogTemp, Warning, TEXT("UBehaviorTree Success"));
@@ -84,37 +84,37 @@ UBlackboardComponent* AModularAIController::get_blackboard() const
 
 void AModularAIController::OnTargetDetected(const TArray<AActor*>& DetectedPawns)
 {
-	AModularAIEnemy* infector = Cast<AModularAIEnemy>(GetCharacter());
-
-	if (!bIsPlayerDetected) 
+	//if (!bIsPlayerDetected) 
 	{
 		for (size_t i = 0; i < DetectedPawns.Num(); i++)
 		{
-			//DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i
 			// 20210718 LSC 플레이어 위치 수정
 			if (DetectedPawns[i] == (AActor*)targetPlayer)
 			{
-				//DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
-				RiskLevel = MaxRiskLevel;
-				//perRiskLevel = 20.0f;
-				bIsPlayerDetected = true;
-
-				ChangeBodyColor(FLinearColor::Red);
-				get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
-				infector->SetIsChasing();
-				return;
+				FActorPerceptionBlueprintInfo info;
+				GetPerceptionComponent()->GetActorsPerception(DetectedPawns[i], info);
+				for (size_t j = 0; j < info.LastSensedStimuli.Num(); j++)
+				{
+					FAIStimulus stim = info.LastSensedStimuli[j];
+					if (stim.Type == UAISense::GetSenseID<UAISense_Sight>())
+					{
+						bIsPlayerDetected = stim.WasSuccessfullySensed();
+						if (bIsPlayerDetected)
+						{
+							DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(DetectedPawns[i]);
+							RiskLevel = MaxRiskLevel;
+							//perRiskLevel = 20.0f;
+							ChangeBodyColor(FLinearColor::Red);
+							get_blackboard()->SetValueAsBool(bb_keys::can_see_player, stim.WasSuccessfullySensed());
+							Cast<AModularAIEnemy>(GetCharacter())->SetIsChasing();
+						}
+					}
+					else if (stim.Type == UAISense::GetSenseID<UAISense_Hearing>())
+					{
+						UE_LOG(LogTemp, Warning, TEXT("Listen"));
+					}
+				}
 			}
-		}
-	}
-	else 
-	{
-		// Searching state && DistanceToPlayer <= SightRadius
-		if (infector->IsSearching&& DistanceToPlayer <= AISightRadius)
-		{
-			// SetChasing
-			ChangeBodyColor(FLinearColor::Red);
-			get_blackboard()->SetValueAsBool(bb_keys::can_see_player, true);
-			infector->SetIsChasing();
 		}
 	}
 }
@@ -133,43 +133,42 @@ void AModularAIController::SetPerceptionSystem()
 	SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
 
 	GetPerceptionComponent()->SetDominantSense(*SightConfig->GetSenseImplementation());
-	GetPerceptionComponent()->OnPerceptionUpdated.AddDynamic(this, &AModularAIController::OnTargetDetected);
+	//GetPerceptionComponent()->OnPerceptionUpdated.AddDynamic(this, &AModularAIController::OnTargetDetected);
 	GetPerceptionComponent()->ConfigureSense(*SightConfig);
 
-}
-
-void AModularAIController::SetIdle()
-{
-	RiskLevel = 0.f;
-	bIsPlayerDetected = false;
-	Cast<AModularAIEnemy>(GetCharacter())->SetIdleState();
-
-	ChangeBodyColorFlag = false;
-	ChangeBodyColor(FLinearColor::White);
-	ChangeBodyColorFlag = false;
+	HearingConfig = CreateDefaultSubobject<UAISenseConfig_Hearing>(TEXT("Hearing Config"));
+	HearingConfig->HearingRange = AIHearingRange;
+	HearingConfig->DetectionByAffiliation.bDetectEnemies = true;
+	HearingConfig->DetectionByAffiliation.bDetectFriendlies = true;
+	HearingConfig->DetectionByAffiliation.bDetectNeutrals = true;
+	GetPerceptionComponent()->OnPerceptionUpdated.AddDynamic(this, &AModularAIController::OnTargetDetected);
+	GetPerceptionComponent()->ConfigureSense(*HearingConfig);
 }
 
 void AModularAIController::RiskLevelTimer()
 {
 	// 플레이어를 인식하면 RiskLevel를 perRiskLevel만큼 증가
-	if (bIsPlayerDetected)
+	//if (bIsPlayerDetected)
 	{
-		float DistanceToDetectedPlayer = GetPawn()->GetDistanceTo(targetPlayer);
-		AModularAIEnemy* infector = Cast<AModularAIEnemy>(GetCharacter());
 		if (DistanceToPlayer >= AISightRadius)
 		{
-			if(RiskLevel > 0.333f * MaxRiskLevel)
-				RiskLevel -= perRiskLevel;
-			
-			
-			UE_LOG(LogTemp, Warning, TEXT("Searching (%d) DistanceToPlayer(%f)"),infector->IsSearching,DistanceToPlayer);
-			// TODO: infector->isSearching && infector->GetActorsLocation() <= targetLocation of Blackboard
-				// SetIdle
-			if (RiskLevel <= 0.333f * MaxRiskLevel)
+			UE_LOG(LogTemp, Warning, TEXT("%f"), RiskLevel);
+			RiskLevel -= perRiskLevel;
+			if (RiskLevel <= 0.f)
 			{
-				// SetSearching State
+				RiskLevel = 0.f;
+				bIsPlayerDetected = false;
+				Cast<AModularAIEnemy>(GetCharacter())->SetIdleState();
+
+				ChangeBodyColorFlag = false;
+				ChangeBodyColor(FLinearColor::White);
+				ChangeBodyColorFlag = false;
+			}
+			else if (RiskLevel <= 0.333f * MaxRiskLevel)
+			{
+				// etSearching State
 				get_blackboard()->SetValueAsBool(bb_keys::can_see_player, false);
-				infector->SetIsSearching();
+				Cast<AModularAIEnemy>(GetCharacter())->SetIsSearching();
 
 				ChangeBodyColorFlag = false;
 				ChangeBodyColor(FLinearColor::Yellow);
@@ -187,9 +186,9 @@ void AModularAIController::RiskLevelTimer()
 	}
 }
 
-void AModularAIController::ChangeBodyColor(FLinearColor Color) 
+void AModularAIController::ChangeBodyColor(FLinearColor Color)
 {
-	if (!ChangeBodyColorFlag &&  material_instance)
+	if (!ChangeBodyColorFlag && material_instance)
 	{
 		material_instance->SetVectorParameterValue("BodyColor", FLinearColor(Color));
 		this->GetCharacter()->GetMesh()->SetMaterial(0, material_instance);
